@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>Michał Radzik</h1>
+<p>Covid 19 Statystyki w Polsce</p>
+
+<table border="1" style="width:300px">
+<thead>
+<tr>
+  <p><th> Potwierdzonych przypadków </th></p>
+  <p><th> Ozdrowieńcy </th></p>
+  <p><th> Zmarło </th></p>
+  <p><th> Kraj </th></p>
+  <p><th> Populacja </th></p>
+  <p><th> Powierzchnia kwadratowa </th></p>
+  <p> <th> Oczekiwana długość życia </th></p>
+
+</tr>
+
+</thead>
+<tbody>
+
+<tr th:each="covid : ${covidStatistic.getAdditionalProperties().values()}">
+  <td align="center"><span th:text="${covid.confirmed}"></span></td>
+  <td align="center"><span th:text="${covid.recovered}"></span></td>
+  <td align="center"><span th:text="${covid.deaths}"></span></td>
+  <td align="center"><span th:text="${covid.country}"></span></td>
+  <td align="center"><span th:text="${covid.population}"></span></td>
+  <td align="center"><span th:text="${covid.sq_km_area}"></span></td>
+  <td align="center"><span th:text="${covid.life_expectancy}"></span></td>
+
+</tr>
+</table>
+</tbody>
+
+</body>
+</html>
